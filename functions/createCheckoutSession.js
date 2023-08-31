@@ -2,7 +2,7 @@
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-exports.handler = async (event, context) => {
+export async function handler(event, context) {
     try {
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ['card'],
@@ -27,4 +27,4 @@ exports.handler = async (event, context) => {
             body: JSON.stringify({ error: error.message }),
         };
     }
-};
+}
