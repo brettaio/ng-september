@@ -1,6 +1,16 @@
 <div class="card">
-  <img src="path-to-product-image" alt="Product Image" />
+  <!-- Display product details here -->
   <h3>Product Name</h3>
-  <p>Price: $19.99</p>
-  <button (click)="testButtonClick()">Test Button</button>
+  <p>Price: $99.99</p>
+  <!-- Update the price to match your product -->
+
+  <!-- Button to initiate payment -->
+  <button (click)="initiatePayment()">Buy Now</button>
+
+  <!-- Display Stripe session info -->
+  <div *ngIf="stripeSession">
+    <h4>Stripe Session Info</h4>
+    <p>Session ID: {{ stripeSession.sessionId }}</p>
+    <!-- You can display more session information as needed -->
+  </div>
 </div>
