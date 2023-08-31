@@ -1,0 +1,5 @@
+[[headers]]
+  for = "/*" # Applies to all paths
+    [headers.access_control_allow_origin]
+      origin = "*"
+      methods = ["GET", "POST"]
