@@ -14,7 +14,7 @@ export class ProductCardComponent {
 
   initiatePayment() {
     this.http
-      .post('/functions/createCheckoutSession', {})
+      .post('/.netlify/functions/createCheckoutSession', {})
       .pipe(
         catchError((error) => {
           console.error('Error initiating payment:', error);
