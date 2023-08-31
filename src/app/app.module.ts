@@ -7,9 +7,11 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { SuccessPageComponent } from './website/success-page/success-page.component';
+import { CancelPageComponent } from './website/cancel-page/cancel-page.component';
 
 @NgModule({
-  declarations: [AppComponent, ProductCardComponent],
+  declarations: [AppComponent, ProductCardComponent, SuccessPageComponent, CancelPageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
