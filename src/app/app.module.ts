@@ -13,8 +13,18 @@ import { IndexComponent } from './website/index/index.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
-  declarations: [AppComponent, ProductCardComponent, SuccessPageComponent, CancelPageComponent, IndexComponent, HeaderComponent, FooterComponent],
+  declarations: [
+    AppComponent,
+    ProductCardComponent,
+    SuccessPageComponent,
+    CancelPageComponent,
+    IndexComponent,
+    HeaderComponent,
+    FooterComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,6 +36,7 @@ import { FooterComponent } from './shared/footer/footer.component';
     }),
     BrowserAnimationsModule,
     HttpClientModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
