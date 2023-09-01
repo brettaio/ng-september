@@ -1,48 +1,80 @@
-<form name="contact" netlify (ngSubmit)="submitForm()" #contactForm="ngForm">
-  <div class="mb-3">
-    <label for="name" class="form-label">Name</label>
-    <input
-      type="text"
-      class="form-control"
-      id="name"
-      name="name"
-      [(ngModel)]="formData.name"
-      required
-    />
+<div id="container">
+  <div class="error" [class.hidden]="errorMsg.length == 0">
+    <p>{{ errorMsg }}</p>
+    <span (click)="closeError()" class="close">✖︎</span>
   </div>
-  <div class="mb-3">
-    <label for="phoneNumber" class="form-label">Phone Number</label>
-    <input
-      type="tel"
-      class="form-control"
-      id="phoneNumber"
-      name="phoneNumber"
-      [(ngModel)]="formData.phoneNumber"
-      required
-    />
-  </div>
-  <div class="mb-3">
-    <label for="email" class="form-label">Email</label>
-    <input
-      type="email"
-      class="form-control"
-      id="email"
-      name="email"
-      [(ngModel)]="formData.email"
-      required
-    />
-  </div>
-  <div class="mb-3 form-check">
-    <input
-      type="checkbox"
-      class="form-check-input"
-      id="subscribe"
-      name="subscribe"
-      [(ngModel)]="formData.subscribe"
-    />
-    <label class="form-check-label" for="subscribe"
-      >Subscribe to newsletter</label
-    >
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+  <h1>Feedback Form</h1>
+  <hr />
+  <p>We’d like your feedback to improve our website.</p>
+  <form [formGroup]="feedbackForm" name="feedbackForm" (ngSubmit)="onSubmit()">
+    <div id="options">
+      <p class="radioOption">
+        <input
+          formControlName="type"
+          type="radio"
+          id="suggestion"
+          name="type"
+          value="suggestion"
+        />
+        <label for="suggestion">Suggestion</label><br />
+      </p>
+      <p class="radioOption">
+        <input
+          formControlName="type"
+          type="radio"
+          id="comment"
+          name="type"
+          value="comment"
+        />
+        <label for="comment">Comment</label><br />
+      </p>
+      <p class="radioOption">
+        <input
+          formControlName="type"
+          type="radio"
+          id="question"
+          name="type"
+          value="question"
+        />
+        <label for="question">Question</label><br />
+      </p>
+    </div>
+    <div class="inputContainer">
+      <label>Description:</label>
+      <textarea rows="6" formControlName="description"></textarea>
+    </div>
+    <div class="inputContainer">
+      <div id="ratingLabel">
+        <label>How would you rate our site?</label>
+        <label id="ratingValue">{{ feedbackForm.value.rating }}</label>
+      </div>
+      <input formControlName="rating" type="range" name="rating" max="5" />
+    </div>
+    <div class="inputContainer">
+      <label>Name:</label>
+      <div class="nameInput">
+        <input
+          formControlName="firstName"
+          type="text"
+          name="firstName"
+          placeholder="First"
+        />
+        <input
+          formControlName="lastName"
+          type="text"
+          name="lastName"
+          placeholder="Last"
+        />
+      </div>
+    </div>
+    <div class="inputContainer">
+      <label>Email:</label>
+      <input formControlName="email" type="email" name="email" />
+    </div>
+    <div class="inputContainer">
+      <button type="submit" [disabled]="feedbackForm.invalid">
+        Submit Feedback
+      </button>
+    </div>
+  </form>
+</div>
