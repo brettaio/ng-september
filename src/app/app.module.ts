@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProductCardComponent } from './product-card/product-card.component';
 import { SuccessPageComponent } from './website/success-page/success-page.component';
 import { CancelPageComponent } from './website/cancel-page/cancel-page.component';
 import { IndexComponent } from './website/index/index.component';
@@ -14,16 +13,21 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CardComponent } from './shared/card/card.component';
+import { FormComponent } from './shared/form/form.component';
+import { HeroComponent } from './shared/hero/hero.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductCardComponent,
     SuccessPageComponent,
     CancelPageComponent,
     IndexComponent,
     HeaderComponent,
     FooterComponent,
+    CardComponent,
+    FormComponent,
+    HeroComponent,
   ],
   imports: [
     BrowserModule,

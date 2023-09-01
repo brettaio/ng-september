@@ -1,0 +1,9 @@
+.header,
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh; /* Adjust the height as needed */
+  background-color: #333; /* Add a background color if desired */
+  color: #fff; /* Text color for header and footer */
+}
