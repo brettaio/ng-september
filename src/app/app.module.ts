@@ -9,9 +9,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { SuccessPageComponent } from './website/success-page/success-page.component';
 import { CancelPageComponent } from './website/cancel-page/cancel-page.component';
+import { IndexComponent } from './website/index/index.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, ProductCardComponent, SuccessPageComponent, CancelPageComponent],
+  declarations: [AppComponent, ProductCardComponent, SuccessPageComponent, CancelPageComponent, IndexComponent, HeaderComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
