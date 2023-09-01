@@ -1,11 +1,11 @@
 <div id="container">
   <div class="error" [class.hidden]="errorMsg.length == 0">
     <p>{{ errorMsg }}</p>
-    <span (click)="closeError()" class="close">✖︎</span>
+    <span (click)="closeError()" class="close">X</span>
   </div>
   <h1>Feedback Form</h1>
   <hr />
-  <p>We’d like your feedback to improve our website.</p>
+  <p>We'd like your feedback to improve our website.</p>
   <form [formGroup]="feedbackForm" name="feedbackForm" (ngSubmit)="onSubmit()">
     <div id="options">
       <p class="radioOption">
