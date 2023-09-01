@@ -16,6 +16,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CardComponent } from './shared/card/card.component';
 import { FormComponent } from './shared/form/form.component';
 import { HeroComponent } from './shared/hero/hero.component';
+import { ModalPopupComponent } from './shared/modal-popup/modal-popup.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { HeroComponent } from './shared/hero/hero.component';
     CardComponent,
     FormComponent,
     HeroComponent,
+    ModalPopupComponent,
   ],
   imports: [
     BrowserModule,
