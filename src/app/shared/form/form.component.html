@@ -1,1 +1,48 @@
-<p>form works!</p>
+<form (ngSubmit)="submitForm()" #contactForm="ngForm">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      name="name"
+      [(ngModel)]="formData.name"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="phoneNumber" class="form-label">Phone Number</label>
+    <input
+      type="tel"
+      class="form-control"
+      id="phoneNumber"
+      name="phoneNumber"
+      [(ngModel)]="formData.phoneNumber"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      [(ngModel)]="formData.email"
+      required
+    />
+  </div>
+  <div class="mb-3 form-check">
+    <input
+      type="checkbox"
+      class="form-check-input"
+      id="subscribe"
+      name="subscribe"
+      [(ngModel)]="formData.subscribe"
+    />
+    <label class="form-check-label" for="subscribe"
+      >Subscribe to newsletter</label
+    >
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
