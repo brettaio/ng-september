@@ -1,6 +1,10 @@
 // netlify/functions/createCheckoutSession.js
 
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+// Import the 'stripe' module using ES6-style import
+import * as Stripe from 'stripe';
+
+// Initialize the Stripe instance with your secret key
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 export async function handler(event, context) {
     try {
