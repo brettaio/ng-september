@@ -18,7 +18,7 @@ export class CardComponent {
   onButtonClick(): void {
     // Perform an HTTP request to your serverless function
     const request = this.http.post(
-      'https://ng-september.bretta.io/functions/createCheckoutSession',
+      'https://ng-september.bretta.io/.netlify/functions/createCheckoutSession',
       {}
     );
 
