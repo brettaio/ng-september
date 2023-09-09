@@ -1,34 +1,49 @@
-// netlify/functions/createCheckoutSession.js
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const cors = require('cors')();
 
-// Import the 'stripe' module using ES6-style import
-import * as Stripe from 'stripe';
+exports.handler = async function (event, context) {
+    // Enable CORS for all routes in this function
+    await cors(event, context);
 
-// Initialize the Stripe instance with your secret key
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+    if (event.httpMethod === 'POST') {
+        try {
+            // Your Stripe code to create a checkout session goes here
+            const session = await stripe.checkout.sessions.create({
+                payment_method_types: ['card'],
+                line_items: [
+                    {
+                        price: 'price_1NlAF9L0dOKck8e3miFCP7LT', // Replace with your actual price ID
+                        quantity: 1,
+                    },
+                ],
+                mode: 'payment',
+                success_url: 'https://ng-september.bretta.io/success',
+                cancel_url: 'https://ng-september.bretta.io/cancel',
+            });
 
-export async function handler(event, context) {
-    try {
-        const session = await stripe.checkout.sessions.create({
-            payment_method_types: ['card'],
-            line_items: [
-                {
-                    price: 'price_1NlAF9L0dOKck8e3miFCP7LT', // Replace with your actual price ID
-                    quantity: 1,
+            return {
+                statusCode: 200,
+                headers: {
+                    'Content-Type': 'application/json',
                 },
-            ],
-            mode: 'payment',
-            success_url: 'https://ng-september.bretta.io/success',
-            cancel_url: 'https://ng-september.bretta.io/cancel',
-        });
-
+                body: JSON.stringify({ sessionId: session.id }),
+            };
+        } catch (error) {
+            return {
+                statusCode: 500,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ error: error.message }),
+            };
+        }
+    } else {
         return {
-            statusCode: 200,
-            body: JSON.stringify({ sessionId: session.id }),
-        };
-    } catch (error) {
-        return {
-            statusCode: 500,
-            body: JSON.stringify({ error: error.message }),
+            statusCode: 405, // Method not allowed
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ error: 'Method not allowed' }),
         };
     }
-}
+};
