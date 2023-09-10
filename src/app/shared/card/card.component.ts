@@ -12,7 +12,7 @@ export class CardComponent {
   triggerPayment() {
     // Create an instance of the Stripe object with your publishable API key
     const stripe = Stripe(
-      'pk_live_51NbRDjL0dOKck8e3riHtqGK1nCCoA7RXIprTDtoMTdDcpp0IFn0EajzS3OPP2gKzPlSloJ4B3KNZLCLFXDViv6Tm00Dfp0YCyJ'
+      'pk_test_51NbRDjL0dOKck8e30IKHMmqdys7VDRdusIGlePpcyPgmPdYqqcum5MYFH4bTgnIGF41aXsZTldY56Lfrqphop2xH00fislaiOR'
     );
 
     // Create a new Checkout Session using the server-side endpoint
