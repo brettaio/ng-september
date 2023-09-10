@@ -1,0 +1,12 @@
+/* Add your component styles here */
+.threejs-container {
+  width: 100vw; /* 100% of viewport width */
+  height: 80vh; /* 100% of viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  overflow: hidden; /* Prevent any overflow issues */
+  margin: 0;
+  padding: 0;
+}

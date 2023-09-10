@@ -3,9 +3,8 @@
 html,
 body {
   height: 100%;
-}
-body {
   margin: 0;
+  padding: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
@@ -14,11 +13,7 @@ body {
   flex-direction: column; /* Stack items vertically */
   align-items: center; /* Center items horizontally */
   justify-content: center; /* Center items vertically */
-  min-height: 80vh;
-}
-
-.component-wrapper {
-  margin-bottom: 20px; /* Adjust the margin between components as needed */
+  max-height: 80vh;
 }
 
 .header,
@@ -29,4 +24,12 @@ body {
   height: 10vh; /* Adjust the height as needed */
   background-color: #333; /* Add a background color if desired */
   color: #fff; /* Text color for header and footer */
+}
+
+.threejs-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
 }

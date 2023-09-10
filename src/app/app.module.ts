@@ -19,6 +19,7 @@ import { CardComponent } from './shared/card/card.component';
 import { FormComponent } from './shared/form/form.component';
 import { HeroComponent } from './shared/hero/hero.component';
 import { ModalPopupComponent } from './shared/modal-popup/modal-popup.component';
+import { IndexThreejsComponent } from './website/index-threejs/index-threejs.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ModalPopupComponent } from './shared/modal-popup/modal-popup.component'
     FormComponent,
     HeroComponent,
     ModalPopupComponent,
+    IndexThreejsComponent,
   ],
   imports: [
     BrowserModule,

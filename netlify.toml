@@ -3,3 +3,8 @@
     [headers.access_control_allow_origin]
       origin = "*"
       methods = ["GET", "POST"]
+
+      [[redirects]]
+  from = '/api/*'
+  to = '/functions/:splat'
+  status = 200
