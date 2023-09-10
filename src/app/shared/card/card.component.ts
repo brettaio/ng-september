@@ -17,7 +17,7 @@ export class CardComponent {
 
     // Create a new Checkout Session using the server-side endpoint
     // You can replace '/api/stripe' with your actual server-side endpoint
-    fetch('/function/createCheckoutSession', {
+    fetch('/api/createCheckoutSession', {
       method: 'POST',
     })
       .then((response) => response.json())
