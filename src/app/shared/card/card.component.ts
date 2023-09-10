@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+declare var Stripe: any;
 
 @Component({
   selector: 'app-card',
@@ -7,32 +7,32 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
-  @Input()
-  title!: string;
-  @Input()
-  content!: string;
+  constructor() {}
 
-  constructor(private http: HttpClient) {}
-
-  // Function to be called when the button is clicked
-  onButtonClick(): void {
-    // Perform an HTTP request to your serverless function
-    const request = this.http.post(
-      'https://ng-september.bretta.io/.netlify/functions/createCheckoutSession',
-      {}
+  triggerPayment() {
+    // Create an instance of the Stripe object with your publishable API key
+    const stripe = Stripe(
+      'pk_live_51NbRDjL0dOKck8e3riHtqGK1nCCoA7RXIprTDtoMTdDcpp0IFn0EajzS3OPP2gKzPlSloJ4B3KNZLCLFXDViv6Tm00Dfp0YCyJ'
     );
 
-    request.subscribe({
-      next: (response) => {
-        // Handle the response from the serverless function
-        console.log(response);
-        // You can add further logic here to process the response as needed
-      },
-      error: (error) => {
-        // Handle any errors that occur during the request
-        console.error(error);
-        // You can display an error message to the user or take other actions as needed
-      },
-    });
+    // Create a new Checkout Session using the server-side endpoint
+    // You can replace '/api/stripe' with your actual server-side endpoint
+    fetch('/function/createCheckoutSession', {
+      method: 'POST',
+    })
+      .then((response) => response.json())
+      .then((session) => {
+        return stripe.redirectToCheckout({ sessionId: session.id });
+      })
+      .then((result) => {
+        // If `redirectToCheckout` fails due to a browser or network error,
+        // display the localized error message to your customer
+        if (result.error) {
+          alert(result.error.message);
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   }
 }
