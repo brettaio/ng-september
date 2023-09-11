@@ -32,6 +32,7 @@ const routes: Routes = [
   { path: 'updateItem', loadChildren: () => import('./update-item/update-item.module').then(m => m.UpdateItemModule) },
   { path: 'createItem', loadChildren: () => import('./create-item/create-item.module').then(m => m.CreateItemModule) },
   { path: 'deleteItem', loadChildren: () => import('./delete-item/delete-item.module').then(m => m.DeleteItemModule) },
+  { path: 'publicUser', loadChildren: () => import('./public-user/public-user.module').then(m => m.PublicUserModule) },
 ];
 
 @NgModule({
