@@ -23,16 +23,61 @@ const routes: Routes = [
     path: 'cancel',
     component: CancelPageComponent,
   },
-  { path: 'vendor/index', loadChildren: () => import('./vendor/vendor.module').then(m => m.VendorModule) },
-  { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
-  { path: 'signup', loadChildren: () => import('./signup/signup.module').then(m => m.SignupModule) },
-  { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
-  { path: 'addItem', loadChildren: () => import('./add-item/add-item.module').then(m => m.AddItemModule) },
-  { path: 'removeItem', loadChildren: () => import('./remove-item/remove-item.module').then(m => m.RemoveItemModule) },
-  { path: 'updateItem', loadChildren: () => import('./update-item/update-item.module').then(m => m.UpdateItemModule) },
-  { path: 'createItem', loadChildren: () => import('./create-item/create-item.module').then(m => m.CreateItemModule) },
-  { path: 'deleteItem', loadChildren: () => import('./delete-item/delete-item.module').then(m => m.DeleteItemModule) },
-  { path: 'publicUser', loadChildren: () => import('./public-user/public-user.module').then(m => m.PublicUserModule) },
+  {
+    path: 'vendor/index',
+    loadChildren: () =>
+      import('./vendor/vendor.module').then((m) => m.VendorModule),
+  },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./login/login.module').then((m) => m.LoginModule),
+  },
+  {
+    path: 'signup',
+    loadChildren: () =>
+      import('./public-user/signup/signup.module').then((m) => m.SignupModule),
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
+  },
+  {
+    path: 'removeItem',
+    loadChildren: () =>
+      import('./item/remove-item/remove-item.module').then(
+        (m) => m.RemoveItemModule
+      ),
+  },
+  {
+    path: 'updateItem',
+    loadChildren: () =>
+      import('./item/update-item/update-item.module').then(
+        (m) => m.UpdateItemModule
+      ),
+  },
+  {
+    path: 'createItem',
+    loadChildren: () =>
+      import('./item/create-item/create-item.module').then(
+        (m) => m.CreateItemModule
+      ),
+  },
+  {
+    path: 'deleteItem',
+    loadChildren: () =>
+      import('./item/delete-item/delete-item.module').then(
+        (m) => m.DeleteItemModule
+      ),
+  },
+  {
+    path: 'publicUser',
+    loadChildren: () =>
+      import('./public-user/public-user.module').then(
+        (m) => m.PublicUserModule
+      ),
+  },
 ];
 
 @NgModule({
