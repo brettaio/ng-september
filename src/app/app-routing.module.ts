@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { SuccessPageComponent } from './website/success-page/success-page.component';
 import { CancelPageComponent } from './website/cancel-page/cancel-page.component';
 import { IndexComponent } from './website/index/index.component';
@@ -22,7 +23,11 @@ const routes: Routes = [
     path: 'cancel',
     component: CancelPageComponent,
   },
-  { path: 'vendors', loadChildren: () => import('./vendors/vendors.module').then(m => m.VendorsModule) },
+  {
+    path: 'vendors',
+    loadChildren: () =>
+      import('./vendors/vendors.module').then((m) => m.VendorsModule),
+  },
 ];
 
 @NgModule({
