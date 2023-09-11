@@ -8,19 +8,19 @@ import { IndexThreejsComponent } from './website/index-threejs/index-threejs.com
 
 const routes: Routes = [
   {
-    path: 'threejs',
+    path: 'website/threejs',
     component: IndexThreejsComponent,
   },
   {
-    path: '',
+    path: 'website/index',
     component: IndexComponent,
   },
   {
-    path: 'success',
+    path: 'website/success',
     component: SuccessPageComponent,
   },
   {
-    path: 'cancel',
+    path: 'website/cancel',
     component: CancelPageComponent,
   },
   {
