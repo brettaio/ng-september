@@ -20,6 +20,10 @@ import { FormComponent } from './shared/form/form.component';
 import { HeroComponent } from './shared/hero/hero.component';
 import { ModalPopupComponent } from './shared/modal-popup/modal-popup.component';
 import { IndexThreejsComponent } from './website/index-threejs/index-threejs.component';
+import { SignupComponent } from './vendor/signup/signup.component';
+import { LoginComponent } from './vendor/login/login.component';
+import { DashboardComponent } from './vendor/dashboard/dashboard.component';
+import { OrdersComponent } from './vendor/orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +38,10 @@ import { IndexThreejsComponent } from './website/index-threejs/index-threejs.com
     HeroComponent,
     ModalPopupComponent,
     IndexThreejsComponent,
+    SignupComponent,
+    LoginComponent,
+    DashboardComponent,
+    OrdersComponent,
   ],
   imports: [
     BrowserModule,
