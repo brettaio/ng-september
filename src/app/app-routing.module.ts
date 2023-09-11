@@ -23,11 +23,6 @@ const routes: Routes = [
     path: 'cancel',
     component: CancelPageComponent,
   },
-  {
-    path: 'vendors',
-    loadChildren: () =>
-      import('./vendors/vendors.module').then((m) => m.VendorsModule),
-  },
 ];
 
 @NgModule({
