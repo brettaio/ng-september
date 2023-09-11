@@ -21,6 +21,7 @@ import { HeroComponent } from './shared/hero/hero.component';
 import { ModalPopupComponent } from './shared/modal-popup/modal-popup.component';
 import { IndexThreejsComponent } from './website/index-threejs/index-threejs.component';
 
+import { PublicUserModule } from './public-user/public-user.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +50,7 @@ import { IndexThreejsComponent } from './website/index-threejs/index-threejs.com
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
+    PublicUserModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
