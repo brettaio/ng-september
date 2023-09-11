@@ -4,7 +4,7 @@ import {
   HttpErrorResponse,
   HttpParams,
 } from '@angular/common/http';
-import { Feedback } from '../feedback/feedback';
+import { Feedback } from '../../feedback/feedback';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
