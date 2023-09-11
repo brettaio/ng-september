@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Feedback } from 'src/app/website/feedback/feedback';
-import { NetlifyFormsService } from 'src/app/website/netlify-forms/netlify-forms.service';
+import { Feedback } from '../services/feedback/feedback';
+import { NetlifyFormsService } from '../services/netlify-forms/netlify-forms.service';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',

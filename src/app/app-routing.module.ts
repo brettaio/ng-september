@@ -1,30 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { SuccessPageComponent } from './website/success-page/success-page.component';
-import { CancelPageComponent } from './website/cancel-page/cancel-page.component';
-import { IndexComponent } from './website/index/index.component';
-import { IndexThreejsComponent } from './website/index-threejs/index-threejs.component';
+import { WebsiteModule } from './website/website.module';
 
 const routes: Routes = [
   {
-    path: 'website/threejs',
-    component: IndexThreejsComponent,
+    path: '/',
+    component: WebsiteModule,
   },
   {
-    path: 'website/index',
-    component: IndexComponent,
-  },
-  {
-    path: 'website/success',
-    component: SuccessPageComponent,
-  },
-  {
-    path: 'website/cancel',
-    component: CancelPageComponent,
-  },
-  {
-    path: 'vendor/index',
+    path: 'vendor',
     loadChildren: () =>
       import('./vendor/vendor.module').then((m) => m.VendorModule),
   },
