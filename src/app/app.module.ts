@@ -12,6 +12,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { PublicUserModule } from './public-user/public-user.module';
 import { WebsiteModule } from './website/website.module';
+import { CreateVendorModule } from './create-vendor/create-vendor.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -30,6 +31,7 @@ import { WebsiteModule } from './website/website.module';
     FormsModule,
     ReactiveFormsModule,
     PublicUserModule,
+    CreateVendorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
