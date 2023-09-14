@@ -4,7 +4,7 @@
       origin = "*"
       methods = ["GET", "POST"]
 
-      [[redirects]]
-  from = '/api/*'
-  to = '/functions/:splat'
+[[redirects]]
+  from = "/functions/*"
+  to = "/functions/:splat"
   status = 200
