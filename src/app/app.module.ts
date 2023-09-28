@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { PublicUserModule } from './public-user/public-user.module';
 import { WebsiteModule } from './website/website.module';
@@ -27,7 +26,6 @@ import { CreateVendorModule } from './create-vendor/create-vendor.module';
     }),
     BrowserAnimationsModule,
     HttpClientModule,
-    NgbModule,
     FormsModule,
     ReactiveFormsModule,
     PublicUserModule,
