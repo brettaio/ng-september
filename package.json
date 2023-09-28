@@ -28,7 +28,7 @@
     "stripe": "^13.5.0",
     "three": "^0.156.1",
     "tslib": "^2.3.0",
-    "typescript": "^5.1.6",
+    "typescript": "^5.2.2",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
